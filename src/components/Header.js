@@ -25,24 +25,16 @@ const useStyles = makeStyles({
 
 export default function Header() {
     const classes = useStyles();
-    const [state, setState] = React.useState({
-        right: false,
-    });
+    const [isOpen, setIsOpen] = React.useState(false);
 
-    const toggleDrawer = (side, open) => event => {
-        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-            return;
-        }
+    const toggleDrawer = () => setIsOpen(true)
+    const toggleDrawerClosed = () => setIsOpen(false)
 
-        setState({ ...state, [side]: open });
-    };
-
-    const sideList = side => (
+    const sideList = () => (
         <div
             className={classes.list}
             role="presentation"
-            onClick={toggleDrawer(side, false)}
-            onKeyDown={toggleDrawer(side, false)}
+            onClick={toggleDrawerClosed}
         >
             <List>
                 {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
@@ -87,13 +79,13 @@ export default function Header() {
                     <IconButton
                         color="inherit"
                         aria-label="menu"
-                        onClick={toggleDrawer('right', true)}
+                        onClick={toggleDrawer}
                     >
                         <MenuIcon />
                     </IconButton>
 
-                    <Drawer anchor="right" open={state.right} onClose={toggleDrawer('right', false)}>
-                        {sideList('right')}
+                    <Drawer anchor="right" open={isOpen} onClose={toggleDrawerClosed}>
+                        {sideList()}
                     </Drawer>
                     {/* <SideDrawer open={open} onClose={handleDrawerClose} /> */}
                 </Toolbar>
