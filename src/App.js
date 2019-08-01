@@ -6,7 +6,7 @@ import Header from './components/Header';
 
 const App = () => {
   return (
-    <div className="App">
+    <div style={{ height: '5000px', backgroundColor: 'indigo' }}>
       <Header />
     </div>
   );

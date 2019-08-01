@@ -7,6 +7,13 @@ import SideDrawer from './SideDrawer';
 
 export default function Header() {
     const [isOpen, setIsOpen] = React.useState(false);
+    const [headerShow, setHeaderShow] = React.useState(false);
+
+    React.useEffect(() => {
+        window.addEventListener('scroll', () => {
+            window.scrollY > 0 ? setHeaderShow(true) : setHeaderShow(false)
+        })
+    })
 
     const toggleDrawer = () => setIsOpen(true)
     const toggleDrawerClosed = () => setIsOpen(false)
@@ -15,7 +22,7 @@ export default function Header() {
         <div>
             <AppBar position="fixed"
                 style={{
-                    backgroundColor: '#2f2f2f',
+                    backgroundColor: headerShow ? '#2f2f2f' : 'transparent',
                     padding: '10px 0',
                     boxShadow: 'none'
                 }}>
@@ -37,7 +44,7 @@ export default function Header() {
                         <MenuIcon />
                     </IconButton>
 
-                    <SideDrawer  open={isOpen} onClose={toggleDrawerClosed} />
+                    <SideDrawer open={isOpen} onClose={toggleDrawerClosed} />
                 </Toolbar>
             </AppBar>
         </div >
