@@ -10,9 +10,8 @@ import Highlight from '@material-ui/icons/Highlight';
 import ShoppingCart from '@material-ui/icons/ShoppingCart';
 import Place from '@material-ui/icons/Place';
 import Timelapse from '@material-ui/icons/Timelapse';
-
-
 import React from 'react';
+
 
 const useStyles = makeStyles({
     list: {

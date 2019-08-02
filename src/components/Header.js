@@ -3,26 +3,14 @@ import IconButton from '@material-ui/core/IconButton';
 import Toolbar from '@material-ui/core/Toolbar';
 import MenuIcon from '@material-ui/icons/Menu';
 import React from 'react';
-import SideDrawer from './SideDrawer';
+import SideDrawer from './SideDrawer'
 
-export default function Header() {
-    const [isOpen, setIsOpen] = React.useState(false);
-    const [headerShow, setHeaderShow] = React.useState(false);
-
-    React.useEffect(() => {
-        window.addEventListener('scroll', () => {
-            window.scrollY > 0 ? setHeaderShow(true) : setHeaderShow(false)
-        })
-    })
-
-    const toggleDrawer = () => setIsOpen(true)
-    const toggleDrawerClosed = () => setIsOpen(false)
-
+export default function Header(props) {
     return (
         <div>
             <AppBar position="fixed"
                 style={{
-                    backgroundColor: headerShow ? '#2f2f2f' : 'transparent',
+                    backgroundColor: props.headerShow ? '#2f2f2f' : 'transparent',
                     padding: '10px 0',
                     boxShadow: 'none'
                 }}>
@@ -39,12 +27,11 @@ export default function Header() {
                     <IconButton
                         color="inherit"
                         aria-label="menu"
-                        onClick={toggleDrawer}
+                        onClick={props.toggleDrawer}
                     >
                         <MenuIcon />
                     </IconButton>
-
-                    <SideDrawer open={isOpen} onClose={toggleDrawerClosed} />
+                    <SideDrawer open={props.open} onClose={props.toggleDrawerClosed}></SideDrawer>
                 </Toolbar>
             </AppBar>
         </div >
