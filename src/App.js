@@ -3,6 +3,7 @@ import './resources/styles.css'
 
 import Header from './components/Header';
 import Featured from './components/featured';
+import VenueInfo from './components/venueInfo/VenueInfo';
 
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
         toggleDrawerClosed={toggleDrawerClosed}
       ></Header>
       <Featured />
+      <VenueInfo />
     </div>
   );
 }
