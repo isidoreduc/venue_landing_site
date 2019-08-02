@@ -19,7 +19,7 @@ const App = () => {
   const toggleDrawerClosed = () => setIsOpen(false)
 
   return (
-    <div style={{ height: '5000px', backgroundColor: 'indigo' }}>
+    <div style={{ height: '5000px' }}>
       <Header
         headerShow={headerShow}
         toggleDrawer={toggleDrawer}

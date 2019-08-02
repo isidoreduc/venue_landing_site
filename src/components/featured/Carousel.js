@@ -11,7 +11,7 @@ const Carousel = () => {
         infinite: true,
         speed: 3000,
         autoplay: true,
-        autoplaySpeed: 5000
+        autoplaySpeed: 2000
     };
     return (
         <div
@@ -31,7 +31,7 @@ const Carousel = () => {
                                 height: `${window.innerHeight}px`
                             }}
                         >
-                        </div> 
+                        </div>
                     </div>
                 )}
 

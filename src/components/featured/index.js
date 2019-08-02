@@ -1,10 +1,11 @@
 import React from 'react';
-import Slider from './Carousel'
+import Carousel from './Carousel'
+import Countdown from './Countdown';
 
 const Featured = () => {
     return (
         <div style={{ position: 'relative' }}>
-            <Slider />
+            <Carousel />
 
             <div className='artist_name'>
                 <div className='wrapper'>
@@ -18,6 +19,8 @@ const Featured = () => {
                     </span>
                 </div>
             </div>
+
+            <Countdown />
         </div>
     );
 };
