@@ -115,6 +115,7 @@ footer .footer_copyright {
     position:absolute;
     bottom: 0px;
     color:#ffffff;
+    
 }
 
 .countdown_wrapper .countdown_top {
@@ -123,12 +124,14 @@ footer .footer_copyright {
     padding: 10px;
     display: inline-block;
     text-transform: uppercase;
+    opacity: 0.85;
 }
 
 .countdown_wrapper .countdown_bottom {
     display: flex;
     background: #d93d00;
     padding: 10px 20px;
+    opacity: 0.85;
 }
 
 .countdown_wrapper .countdown_time {
@@ -136,6 +139,7 @@ footer .footer_copyright {
     border-right: 1px solid #F44336;
     margin-right: 14px;
     padding-right: 49px;
+    opacity: 0.85;
 }
 .countdown_wrapper .countdown_item:last-child .countdown_time{
     border:none;
@@ -146,6 +150,8 @@ footer .footer_copyright {
     font-size: 20px;
     padding-left: 7px;
 }
+
+
 
 /*====================
         VENUE NFO
