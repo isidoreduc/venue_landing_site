@@ -8,15 +8,17 @@ const Featured = () => {
             <Carousel />
 
             <div className='artist_name'>
-                <div className='wrapper'>
+                <div className='wrapper' style={{ color: '#eff1f4'}}>
                     Rammstein
                     <br />
                     <span style={{
                         fontFamily: 'Righteous',
                         textTransform: 'lowercase'
                     }}>
-                        aarhus, dk
+                        aarhus 
                     </span>
+                    <br />
+                    04.08.20
                 </div>
             </div>
 
