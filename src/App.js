@@ -6,6 +6,7 @@ import Featured from './components/featured';
 import VenueInfo from './components/venueInfo/VenueInfo';
 import Highlights from './components/highlights/Highlights';
 import Prices from './components/prices/Prices';
+import Location from './components/location/Location';
 
 const App = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -32,6 +33,7 @@ const App = () => {
 			<VenueInfo />
 			<Highlights />
 			<Prices />
+			<Location />
 		</div>
 	);
 };
