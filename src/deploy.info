@@ -1,0 +1,5 @@
+How to use surge (for static websites mainly):
+
+1. Build your project
+2. on terminal, in the project folder path: 'surge -p build' (this only uploads the build directory)
+3. press enter when you get the url
