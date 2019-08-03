@@ -7,6 +7,7 @@ import VenueInfo from './components/venueInfo/VenueInfo';
 import Highlights from './components/highlights/Highlights';
 import Prices from './components/prices/Prices';
 import Location from './components/location/Location';
+import Footer from './components/footer/Footer';
 
 const App = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -34,6 +35,7 @@ const App = () => {
 			<Highlights />
 			<Prices />
 			<Location />
+			<Footer />
 		</div>
 	);
 };

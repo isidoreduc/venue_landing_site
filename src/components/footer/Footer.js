@@ -1,11 +1,18 @@
 import React from 'react';
-import Fade from 'react-reveal/Footer';
+import Fade from 'react-reveal/Fade';
 
 const Footer = () => {
+	const year = new Date().getFullYear();
+
 	return (
-		<div className="bck_red">
-			<Fade delay={500}>asalkslaksl</Fade>
-		</div>
+		<footer className="bck_red">
+			<Fade delay={500}>
+				<div className="font_righteous footer_logo_venue">a+venue</div>
+				<div className="footer_copyright">
+					&copy; {year}. All rights reserved
+				</div>
+			</Fade>
+		</footer>
 	);
 };
 
