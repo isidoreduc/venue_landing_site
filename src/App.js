@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Featured from './components/featured';
 import VenueInfo from './components/venueInfo/VenueInfo';
 import Highlights from './components/highlights/Highlights';
+import Prices from './components/prices/Prices';
 
 const App = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -30,6 +31,7 @@ const App = () => {
 			<Featured />
 			<VenueInfo />
 			<Highlights />
+			<Prices />
 		</div>
 	);
 };

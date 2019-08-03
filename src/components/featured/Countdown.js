@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Slide from 'react-reveal/Slide';
+import Fade from 'react-reveal/Fade';
 
 const Countdown = () => {
 	const [date, setDate] = useState('Aug, 4, 2020');
@@ -39,7 +39,7 @@ const Countdown = () => {
 				{ name: 'Min', value: mins },
 				{ name: 'Sec', value: secs }
 			].map(obj => (
-				<div className="countdown_item">
+				<div key={Math.random()} className="countdown_item">
 					<div className="countdown_time">{obj.value}</div>
 					<div className="countdown_tag">{obj.name}</div>
 				</div>
@@ -48,7 +48,7 @@ const Countdown = () => {
 	);
 
 	return (
-		<Slide left delay="1000">
+		<Fade left delay={1000}>
 			<div className="countdown_wrapper">
 				{timeUntilDate < 0 ? (
 					<div className="countdown_top">Awesomeness was awesome</div>
@@ -59,7 +59,7 @@ const Countdown = () => {
 					</>
 				)}
 			</div>
-		</Slide>
+		</Fade>
 	);
 };
 
