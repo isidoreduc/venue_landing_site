@@ -41,7 +41,7 @@ const VenueInfo = () => {
 										<b>Event Location</b>
 									</div>
 									<div className="vn_desc" style={{ fontSize: '24px' }}>
-										Aarhus Idrætspark <br />
+										Aarhus Ceres Park <br />
 										8000 Aarhus, DK
 									</div>
 								</div>
