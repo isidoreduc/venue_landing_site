@@ -8,6 +8,7 @@ import Highlights from './components/highlights/Highlights';
 import Prices from './components/prices/Prices';
 import Location from './components/location/Location';
 import Footer from './components/footer/Footer';
+import { Element } from 'react-scroll';
 
 const App = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -30,12 +31,24 @@ const App = () => {
 				open={isOpen}
 				toggleDrawerClosed={toggleDrawerClosed}
 			/>
-			<Featured />
-			<VenueInfo />
-			<Highlights />
-			<Prices />
-			<Location />
-			<Footer />
+			<Element name="top">
+				<Featured />
+			</Element>
+			<Element name="info">
+				<VenueInfo />
+			</Element>
+			<Element name="high">
+				<Highlights />
+			</Element>
+			<Element name="price">
+				<Prices />
+			</Element>
+			<Element name="loc">
+				<Location />
+			</Element>
+			<Element name="foot">
+				<Footer />
+			</Element>
 		</div>
 	);
 };

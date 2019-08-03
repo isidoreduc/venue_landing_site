@@ -11,54 +11,69 @@ import ShoppingCart from '@material-ui/icons/ShoppingCart';
 import Place from '@material-ui/icons/Place';
 import Timelapse from '@material-ui/icons/Timelapse';
 import React from 'react';
-
+import { scroller } from 'react-scroll';
 
 const useStyles = makeStyles({
-    list: {
-        width: 250,
-    },
-    fullList: {
-        width: 'auto',
-    },
+	list: {
+		width: 250
+	},
+	fullList: {
+		width: 'auto'
+	}
 });
 
 export default function SideDrawer({ open, onClose }) {
-    const classes = useStyles();
-    return (
-        <Drawer
-            open={open}
-            anchor="right"
-            onClick={onClose}
-        >
-            <div className={classes.list}
-                role="presentation">
-                <List>
-                    <ListItem button onClick={() => null}>
-                        <ListItemIcon><Timelapse /></ListItemIcon>
-                        <ListItemText primary='Are we there yet?' />
-                    </ListItem>
-                    <ListItem button onClick={() => null}>
-                        <ListItemIcon><Info /></ListItemIcon>
-                        <ListItemText primary='Venue info' />
-                    </ListItem>
-                    <ListItem button onClick={() => null}>
-                        <ListItemIcon><Highlight /></ListItemIcon>
-                        <ListItemText primary='Highlights' />
-                    </ListItem>
-                </List>
-                <Divider />
-                <List>
-                    <ListItem button onClick={() => null}>
-                        <ListItemIcon><ShoppingCart /></ListItemIcon>
-                        <ListItemText primary='Pricing' />
-                    </ListItem>
-                    <ListItem button onClick={() => null}>
-                        <ListItemIcon><Place /></ListItemIcon>
-                        <ListItemText primary='Location' />
-                    </ListItem>
-                </List>
-            </div>
+	const classes = useStyles();
 
-        </Drawer >
-    )
+	const scrollToElem = element => {
+		scroller.scrollTo(element, {
+			duration: 1500,
+			delay: 100,
+			smooth: true,
+			offset: -100
+		});
+		onClose();
+	};
+
+	return (
+		<Drawer open={open} anchor="right" onClick={onClose}>
+			<div className={classes.list} role="presentation">
+				<List>
+					<ListItem button onClick={() => scrollToElem('top')}>
+						<ListItemIcon>
+							<Timelapse />
+						</ListItemIcon>
+						<ListItemText primary="Are we there yet?" />
+					</ListItem>
+					<ListItem button onClick={() => scrollToElem('info')}>
+						<ListItemIcon>
+							<Info />
+						</ListItemIcon>
+						<ListItemText primary="Venue info" />
+					</ListItem>
+					<ListItem button onClick={() => scrollToElem('high')}>
+						<ListItemIcon>
+							<Highlight />
+						</ListItemIcon>
+						<ListItemText primary="Highlights" />
+					</ListItem>
+				</List>
+				<Divider />
+				<List>
+					<ListItem button onClick={() => scrollToElem('price')}>
+						<ListItemIcon>
+							<ShoppingCart />
+						</ListItemIcon>
+						<ListItemText primary="Pricing" />
+					</ListItem>
+					<ListItem button onClick={() => scrollToElem('loc')}>
+						<ListItemIcon>
+							<Place />
+						</ListItemIcon>
+						<ListItemText primary="Location" />
+					</ListItem>
+				</List>
+			</div>
+		</Drawer>
+	);
 }
