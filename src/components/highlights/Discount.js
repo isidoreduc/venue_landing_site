@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Fade from 'react-reveal/Fade';
 import Slide from 'react-reveal/Slide';
+import Buttony from '../reusable comps/Buttony';
 
 const Discount = () => {
 	const [discountStart, setDiscountStart] = useState(0);
@@ -33,7 +34,12 @@ const Discount = () => {
 							going on sale, but hey, we like discounts as any other out there,
 							so discounts galore for everybody.
 						</p>
-						<div>button</div>
+						<Buttony
+							url="https://www.rammstein.de/en/tickets/"
+							text="Purchase Tickets"
+							background="#ffa800"
+							color="#ffffff"
+						/>
 					</div>
 				</Slide>
 			</div>
