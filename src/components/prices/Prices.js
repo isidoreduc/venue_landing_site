@@ -11,13 +11,14 @@ const Prices = () => {
 			'Come and have a blast enjoying the advantage of altitude while taking in the disadvantage of distance like a champ',
 			'On grass experience where the wild pogo experience will take you adrenaline to record levels',
 			'VIP is VIP. You get to show off in style, get some cool memorabilia and exclusive acces to backstage'
-		]
+		],
+		delay: [500, 0, 500]
 	});
 
 	const showPrices = () =>
 		// can use any of the arrays inside the tickets object to map
 		tickets.position.map((box, i) => (
-			<Zoom key={tickets.price[i] * Math.random()}>
+			<Zoom key={tickets.price[i] * Math.random()} delay={tickets.delay[i]}>
 				<div className="pricing_item">
 					<div className="pricing_inner_wrapper">
 						<div className="pricing_title">
